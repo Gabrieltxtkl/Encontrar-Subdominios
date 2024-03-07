@@ -22,14 +22,14 @@ while answ == "s":
     senhas = int(input("Quantas palavras personalizadas você quer?: "))
     dig = int(input("Quantos caracteres você quer?: "))
     wordlist = []
-    list1 = words[:]  # Usando uma cópia de 'words'
-    list2 = words[:]  # Usando uma cópia de 'words'
+    list1 = words[:]  
+    list2 = words[:]  
     list1.sort(reverse=True)
-    random.shuffle(list2)  # Embaralhar a lista
+    random.shuffle(list2)  
     for w in range(senhas):
         word = random.choice(list1)
         while len(word) < dig:
             word += random.choice(list2)
         wordlist.append(word)
     with open("words.txt", "w") as file:
-        file.write("\n".join(wordlist))  # Escrevendo todas as palavras separadas por uma nova linha
+        file.write("\n".join(wordlist)) 
